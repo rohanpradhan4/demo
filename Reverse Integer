@@ -1,0 +1,97 @@
+class Solution {
+    public int reverse(int x) {
+        
+        int rem = x%10;
+        int res=0;
+    
+    if(x==0)
+    {
+        return 0;
+    }
+    
+    else{
+        
+        
+     if (rem==0)
+        {
+
+              if(x>0)
+                {
+
+                    String str = String.valueOf(x);
+
+                    StringBuilder s = new StringBuilder(str);
+
+                    s.reverse();    
+                      
+                    s.delete(0,1);
+
+                    System.out.print(s);
+
+                    res = Integer.valueOf(s.toString());
+
+
+                }
+
+                else
+                {
+
+                    String str = String.valueOf(x);
+
+                    str = str.substring(1,str.length()-1);
+
+                    StringBuilder s = new StringBuilder(str);
+
+                    s.reverse();
+
+                    s.insert(0,"-");
+
+                    res = Integer.valueOf(s.toString());
+
+                }
+        
+        }
+        
+     else 
+        {
+         
+             if(x>0){
+
+                String str = String.valueOf(x);
+
+                StringBuilder s = new StringBuilder(str);
+
+                s.reverse();
+
+                System.out.print(s);
+
+                res = Integer.valueOf(s.toString());
+
+
+            }
+        
+
+
+            else
+            {
+
+                String str = String.valueOf(x);
+
+                str = str.substring(1,str.length());
+
+                StringBuilder s = new StringBuilder(str);
+
+                s.reverse();
+
+                s.insert(0,"-");
+
+                res = Integer.valueOf(s.toString());
+
+            }
+     }
+    }
+        
+        return res;
+        
+    }
+}
