@@ -1,0 +1,63 @@
+package demo;
+
+public class abc {
+	public static void main(String args[]) {
+		
+		
+		//System.out.println("HI..");
+		//aaabbbccccddddddeeeaaaa
+		
+		String str = "";
+		
+		//char ch[] = str.toCharArray();
+		
+		//System.out.print(ch.length);
+		
+		int count=1,pos=0,max=0,res=0;
+		
+		if(str.isEmpty())
+		{
+			System.out.print("-1,-1");
+		}
+		else {
+		
+		for(int i=0;i<str.length()-1;i++)
+		{
+			char ch = str.charAt(i);
+			char ch1 = str.charAt(i+1);
+			if(ch==ch1)
+			{
+				if(i==str.length()-2)
+				{
+					if(count+1>max) {
+						max=count+1;
+						pos=i-count+1;
+						res=pos;
+						}
+					//System.out.println(pos+" "+(count+1)+" "+str.charAt(pos)+" "+(i+1));
+					//System.out.println("hi");
+				}
+				count++;
+			}
+			else
+			{
+				if(count>max) {
+				max=count;
+				pos=i-count+1;
+				res=pos;
+				}
+				
+				//System.out.println(pos+" "+count+" "+str.charAt(pos)+" "+i);
+				count=1;
+				
+			}
+		}
+			
+			//System.out.print(str.length()-1);
+			
+		System.out.println(res+" "+max);
+		}
+		
+	}
+
+}
