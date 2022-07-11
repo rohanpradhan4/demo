@@ -1,0 +1,50 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        
+        //Arrays.sort(nums);
+        
+        // for(int i=0;i<nums.length;i++)
+        // {
+        //     if(nums[i] != nums[i+1])
+        //     {
+        //         return nums[i];
+        //     }
+        // }
+        
+//         List<Integer> set = new ArrayList<>();
+        
+//         for(int i=0;i<nums.length;i++)
+//         {
+//             set.add(nums[i]);
+//         }
+       
+//         for(int i=0;i<set.size();i++){
+            
+//             if(set.contains(set.get(i)) )
+//             {
+//                 if(set.lastIndexOf(set.get(i)) == set.indexOf(set.get(i)))
+//                     //set.remove(i);
+//                     return (set.get(i));
+//             }
+
+//         }  
+        Set<Integer> set = new HashSet<>();
+        for(int i = 0; i < nums.length; i++){
+            if(!set.add(nums[i]))
+            {
+                //System.out.println("ds"+nums[i]);
+                set.remove(nums[i]);
+            }
+            else{
+                set.add(nums[i]);
+            }
+                
+        }
+        int x = set.iterator().next();
+        System.out.print(x);
+        return x;
+
+        
+        //return 0;
+    }
+}
